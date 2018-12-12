@@ -25,6 +25,7 @@ function moshrc() {
             chmod +x \$SSHHOME/moshrc
 
             echo $'$( cat << 'EOF' | xxd -p
+if [ -r $SSHHOME/.sshrc.d/.ssh_profile ]; then source $SSHHOME/.sshrc.d/.ssh_profile; fi
 if [ -e /etc/bash.bashrc ]; then source /etc/bash.bashrc; fi
 if [ -e ~/.bashrc ]; then source ~/.bashrc; fi
 source $SSHHOME/.sshrc;
